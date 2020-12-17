@@ -23,6 +23,15 @@ const Signup = (props) => {
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
 
+    useEffect(() => {
+        if (!user.loading) {
+            setFirstName("");
+            setLastName("");
+            setEmail("");
+            setPassword("");
+        }
+    }, [user.loading]);
+
     const userSignup = (e) => {
         e.preventDefault();
         const user = { firstName, lastName, email, password };
@@ -89,7 +98,7 @@ const Signup = (props) => {
                     </Form>
                 </Col>
             </Row>
-        </Layout >
+        </Layout>
     );
 };
 

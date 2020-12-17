@@ -28,7 +28,6 @@ const App = () => {
       // dispatch(getAllCategory());
       dispatch(getInitialData());
     }
-
   }, [auth.authenticate]);
 
 
